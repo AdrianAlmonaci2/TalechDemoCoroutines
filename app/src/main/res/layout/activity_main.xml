@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/launch_corutine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Launch my Coroutine"
+            app:layout_constraintBottom_toTopOf="@+id/cancel_scope"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_scope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Scope"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_child_corotuine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel child coroutine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancel_scope" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/throw_exception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Throw exception"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancel_child_corotuine" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/exception_handler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exception handler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/throw_exception" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/supervisor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SupervisorJob"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exception_handler" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/model_scope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ViewmodelScope"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/supervisor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
