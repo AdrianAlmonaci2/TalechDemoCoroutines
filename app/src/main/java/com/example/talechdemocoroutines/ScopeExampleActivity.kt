@@ -1,18 +1,19 @@
 package com.example.talechdemocoroutines
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.example.talechdemocoroutines.databinding.ActivityMainBinding
+import com.example.talechdemocoroutines.databinding.ScopeExampleActivityBinding
 
-class MainActivity : AppCompatActivity() {
+class ScopeExampleActivity : AppCompatActivity() {
 
     private val viewModel = MainViewModel()
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ScopeExampleActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.scope_example_activity)
         setClickListeners()
     }
 
@@ -46,6 +47,15 @@ class MainActivity : AppCompatActivity() {
             modelScope.setOnClickListener {
                 viewModel.throwAnExceptionWithViewmodelScope()
             }
+
+            goToNextActivity.setOnClickListener {
+                goToCooperativeFunActivity()
+            }
         }
+    }
+
+    fun goToCooperativeFunActivity() {
+        val intent = Intent(this, CooperativeFunctionsActivity::class.java)
+        startActivity(intent)
     }
 }

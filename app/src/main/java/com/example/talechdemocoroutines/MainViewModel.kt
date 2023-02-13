@@ -12,15 +12,15 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-    private val repository: Repository = Repository()
+    private val repositoryScope: RepositoryScope = RepositoryScope()
     private val scope = CoroutineScope(Dispatchers.IO)
-    private val handler = CoroutineExceptionHandler { _, throwable ->
+    private val handler = CoroutineExceptionHandler { _, _ ->
         println("This is my action defined in my ExceptionHandler.")
     }
 
     fun callMyFiveSecProcess() {
         viewModelScope.launch {
-            repository.sevenSecondsProcess()
+            repositoryScope.sevenSecondsProcess()
         }
     }
 
@@ -37,14 +37,14 @@ class MainViewModel : ViewModel() {
     fun throwAnException() {
         scope.launch {
             println("Throwing an exception.")
-            repository.throwAnException()
+            repositoryScope.throwAnException()
         }
     }
 
     fun throwAnExceptionWithExceptionHandler() {
         scope.launch(handler) {
             println("Throwing an exception with an ExceptionHandler.")
-            repository.throwAnException()
+            repositoryScope.throwAnException()
         }
     }
 
@@ -52,7 +52,7 @@ class MainViewModel : ViewModel() {
         val supervisor = SupervisorJob()
         scope.launch(supervisor + handler) {
             println("Throwing an exception with a SupervisorJob.")
-            repository.throwAnException()
+            repositoryScope.throwAnException()
         }
     }
 
@@ -60,7 +60,7 @@ class MainViewModel : ViewModel() {
 
         viewModelScope.launch(handler) {
             println("Throwing an exception with a ViewmodelScope.")
-            repository.throwAnException()
+            repositoryScope.throwAnException()
         }
     }
 }

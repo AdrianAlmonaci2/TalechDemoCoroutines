@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalechDemoCoroutines">
         <activity
-            android:name=".MainActivity"
+            android:name=".ScopeExampleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CooperativeFunctionsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

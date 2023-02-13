@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ScopeExampleActivity">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/launch_corutine"
@@ -71,6 +71,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/supervisor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_to_next_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to next Activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/model_scope" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
